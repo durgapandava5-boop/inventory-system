@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.2rem;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* GLASS PANELS */
+.panel {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* FORM */
+form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.3);
+}
+
+/* BUTTONS */
+.actions {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#saveBtn {
+  background: #00ffcc;
+  color: #333;
+}
+
+#saveBtn:hover {
+  transform: scale(1.05);
+}
+
+#resetBtn {
+  background: #facc15;
+}
+
+#resetBtn:hover {
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: rgba(0,0,0,0.3);
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr {
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  animation: fadeRow 0.5s ease;
+}
+
+@keyframes fadeRow {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+tbody tr:hover {
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.35);
+}
+
+/* SEARCH */
+#search {
+  margin-bottom: 10px;
+}
+
+/* MESSAGE */
+.message {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  color: white;
+  opacity: 0.8;
+}
+body {
+  animation: fadePage 0.8s ease-in-out;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.panel {
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+button:active {
+  transform: scale(0.92);
+}
+button:hover {
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+input:focus {
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  animation: slideIn 0.4s ease;
+}
+
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
+
+@keyframes slideIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}

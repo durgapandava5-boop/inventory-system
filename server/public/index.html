@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Inventory System</h1>
+      <p>Manage your items (create, read, update, delete)</p>
+    </header>
+
+    <main>
+      <section class="panel" aria-label="Add item">
+        <h2>Add / Update Item</h2>
+        <form id="itemForm">
+          <input type="hidden" id="itemId" />
+
+          <label>
+            Name
+            <input required type="text" id="name" placeholder="e.g. Widget" />
+          </label>
+
+          <label>
+            Description
+            <input type="text" id="description" placeholder="Optional" />
+          </label>
+
+          <label>
+            Quantity
+            <input required type="number" id="quantity" min="0" value="0" />
+          </label>
+
+          <label>
+            Price
+            <input required type="number" id="price" step="0.01" min="0" value="0" />
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="saveBtn">Save</button>
+            <button type="button" id="resetBtn">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-label="Inventory list">
+        <h2>Inventory</h2>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by name..."
+          aria-label="Search items"
+        />
+        <div id="message" class="message"></div>
+      <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody id="itemsTable"></tbody> 
+</table>  
+      </section>
+    </main>
+<footer>
+  <small>Powered by Express + MongoDB</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
+    
