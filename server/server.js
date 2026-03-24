@@ -16,12 +16,13 @@ app.use("/api/items", itemsRouter);
 app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/inventoryDB")
+mongoose.connect("mongodb+srv://durga:@durga_2020@cluster0.2aawnmw.mongodb.net/inventoryDB")
 .then(() => console.log("DB Connected"))
 .catch(err => console.log(err));
 
 // Test route
 app.get("/", (req, res) => {
+  
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
